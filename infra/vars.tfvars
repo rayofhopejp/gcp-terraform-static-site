@@ -1,0 +1,5 @@
+region = "asia-northeast1"
+zone = "asia-northeast1-a"
+project = "<PROJECT>"
+credentials = "./gcp-project-key.json"
+website_domain_name = "<DOMAIN>"

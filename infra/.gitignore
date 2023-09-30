@@ -1,0 +1,6 @@
+gcp-project-key.json
+
+.*
+!.gitignore
+terraform.tfstate*
+*.txt

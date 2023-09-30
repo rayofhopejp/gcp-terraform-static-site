@@ -1,0 +1,19 @@
+steps:
+  # Install dependencies
+  - name: python
+    entrypoint: pip
+    args: ["install", "--upgrade", "pip"]
+
+  - name: python
+    entrypoint: pip
+    args: ["install", "-r", "requirements.pi", "--user"]
+
+  - name: python
+    script: python -m sphinx.cmd.build -b html docs/source docs/build
+
+# Save build files to Google Cloud Storage
+artifacts:
+  objects:
+    location: gs://${_BUCKET_NAME}/
+    paths: ["docs/build/*"]
+# Store images in Google Artifact Registry
